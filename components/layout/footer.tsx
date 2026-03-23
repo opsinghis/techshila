@@ -31,12 +31,17 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/contact" className="hover:text-foreground transition-colors">Contact Us</Link></li>
               <li>omsingh.is@gmail.com</li>
-              <li>United Kingdom</li>
+              <li>Northwood, England</li>
             </ul>
           </div>
         </div>
 
         <Separator className="my-8 opacity-50" />
+
+        <div className="text-xs text-muted-foreground/70 mb-4">
+          <p>Techshila Ltd is registered in England &amp; Wales. Company No. 17107536.</p>
+          <p>Registered office: 37 Cygnet Close, Northwood, England, HA6 2TA.</p>
+        </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Techshila Ltd. All rights reserved.</p>

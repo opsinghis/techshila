@@ -42,7 +42,7 @@ export default function ContactPage() {
               <div className="rounded-xl border border-border/50 bg-card/50 p-6">
                 <MapPin className="h-5 w-5 text-primary mb-3" />
                 <h3 className="font-semibold mb-1">Location</h3>
-                <p className="text-sm text-muted-foreground">United Kingdom</p>
+                <p className="text-sm text-muted-foreground">Northwood, England, UK</p>
               </div>
             </div>
           </AnimatedSection>
