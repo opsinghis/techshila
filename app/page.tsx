@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { ServicesPreview } from "@/components/sections/services-preview";
 import { HowItWorks } from "@/components/sections/how-it-works";
+import { SdlcShowcase } from "@/components/sections/sdlc-showcase";
 import { CaseStudyHighlight } from "@/components/sections/case-study-highlight";
 import { Testimonials } from "@/components/sections/testimonials";
 import { CtaSection } from "@/components/sections/cta-section";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Hero />
       <ServicesPreview services={services} />
       <HowItWorks />
+      <SdlcShowcase />
       <CaseStudyHighlight caseStudy={caseStudy} />
       <Testimonials testimonials={testimonials} />
       <CtaSection />
