@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:sdlc-reimagined.vercel.app)",
-      "WebFetch(domain:www.linkedin.com)"
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:agentic-sdet.vercel.app)",
+      "Bash(ls:*)"
     ]
   }
 }

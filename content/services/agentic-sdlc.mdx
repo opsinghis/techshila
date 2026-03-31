@@ -1,37 +1,86 @@
 ---
 title: "Agentic SDLC Framework"
 slug: "agentic-sdlc"
-description: "Our open-source framework for AI-powered software delivery"
+description: "Our open-source framework for AI-powered software delivery — structured workflows, quality gates, and full traceability from ticket to PR."
 icon: "workflow"
 order: 3
 featured: true
 excerpt: "An open-source framework that turns AI coding assistants into structured development partners — with quality gates, test generation, and workflow automation built in."
 ---
 
-## What Is Agentic SDLC?
+## The Problem with AI-Assisted Development Today
 
-Agentic SDLC is our open-source framework that transforms how teams use AI in software development. Instead of ad-hoc prompting, it provides structured workflows with quality gates, automated testing, and governed delivery pipelines.
+Most teams using AI for coding are stuck in **ad-hoc prompting** — inconsistent results that depend on who writes the prompt. There's no traceability from Jira ticket to pull request, tests get skipped, and decisions live in the developer's head instead of the repo.
 
-## The Problem
+**The result:** AI tools boost individual speed but create organisational risk — no consistency, no traceability, no safety net.
 
-Most teams using AI for coding are "vibe coding" — generating code without structure, review, or quality assurance. The result? Technical debt at AI speed.
+## Our Framework: Three Pipelines, One System
 
-## The Solution
+Agentic SDLC is built on two core architectural principles:
 
-Agentic SDLC provides:
+**LISA (Layered Information State Architecture)** — each phase reads the previous state, writes its own. Markdown artifacts become the single source of truth with a full audit trail for every decision.
 
-### Structured Workflows
-Pre-built workflow templates for common development tasks: bug fixes, feature development, test generation, code review. Each workflow includes quality gates and checkpoints.
+**Ralph Loops (Idempotent Retry with Signal-Based Routing)** — every phase emits a signal: ADVANCE, BLOCK, LOOPBACK, or TERMINAL. Max 3 retries per loop — no infinite spirals.
 
-### Quality Engineering Integration
-Automated test generation, security scanning, and code quality analysis built into every workflow. AI doesn't just write code — it validates it.
+### 1. Story Readiness Pipeline
 
-### Team Governance
-Configurable rules and guardrails that ensure AI-generated code meets your team's standards. Tech stack validation, architectural compliance, and coding conventions enforced automatically.
+Three sequential commands that turn a Jira ticket into a fully-engineered, test-ready story:
 
-### Knowledge Capture
-Every workflow execution captures learnings — what worked, what failed, what patterns emerged. Your team gets smarter with every cycle.
+- **/story-draft** — generates acceptance criteria, edge cases, and initial scope
+- **/story-engineer** — adds technical design, file impact analysis, and implementation notes
+- **/story-qa** — creates test scenarios, defines coverage requirements, and validates readiness
+
+### 2. Development Workflows
+
+Purpose-built pipelines for every type of work:
+
+- **Bug-Fix** (16 phases) — reproduce, root-cause, fix, test, PR
+- **Feature-Enhance** (17 phases) — extend existing functionality with backward compatibility checks
+- **Feature-Build** (20+ phases) — greenfield features with full architecture design
+- **SDET Router** — automatically classifies your task and selects the right workflow
+
+### 3. QE Pipeline
+
+Six automated testing categories in every run:
+
+- **Functional** — unit + component tests
+- **Integration** — service boundary tests
+- **E2E** — full user journey tests
+- **Performance** — load + response time benchmarks
+- **Security** — OWASP + dependency audit
+- **Accessibility** — WCAG compliance checks
+
+Plus: failure classification (env vs flaky vs real), auto-created Jira bugs with repro steps, and re-run intelligence that only retests affected areas.
+
+## The Numbers
+
+| Metric | Before | After |
+|---|---|---|
+| Fix cycle time | 3–5 days | ~1 hour |
+| Workflow phases | 0–1 | 16+ |
+| Test creation | Manual | Auto-generated |
+| PR process | Manual | Automated |
+| Documentation | Ad-hoc/none | 16+ artifacts |
+| Knowledge capture | Tribal | KNOWLEDGE_BASE.md |
+
+## What Your Team Gets
+
+- **Every decision traced** — 16+ markdown artifacts per workflow, full audit trail from ticket to PR
+- **Tests never skipped** — phase gates enforce test creation before code can advance
+- **Consistent quality** — same process, every developer, every time
+- **Knowledge retained** — a LEARN phase writes to KNOWLEDGE_BASE.md so decisions survive team turnover
+- **Zero-config adoption** — generators auto-detect your stack, frameworks, and test tools
 
 ## Getting Started
 
-The framework is open-source and available on GitHub. We also offer professional services to help teams adopt and customise it for their specific needs.
+The framework is open-source. Three steps to get running:
+
+1. Copy the `.claude/` directory into your repo
+2. Run the generators: `/generate-development-workflows`, `/generate-story-workflows`, `/generate-qe-workflows`
+3. Execute your first workflow: `/bug-fix PROJ-123`
+
+**Recommended adoption path:** Week 1 — Story Readiness on your next ticket. Week 2 — Bug-Fix on a real production bug. Week 3 — Feature builds + QE pipelines.
+
+We also offer professional services to help teams adopt, customise, and scale the framework across their organisation.
+
+[Explore the full interactive presentation →](https://agentic-sdet.vercel.app/presentation)
